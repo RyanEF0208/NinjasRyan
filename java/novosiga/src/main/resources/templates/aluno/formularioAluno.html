@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Aluno</title>
+</head>
+<body>
+    <h1>Formulário Aluno</h1>
+
+    <form th:action="@{/alunos/salvar}" method="POST" th:object="${aluno}" enctype="multipart/form-data">
+        <input type="hidden" name="idAluno" th:field="*{idAluno}"/>
+
+        <label for="nomeAluno">Nome:</label>
+        <input type="text" name="nomeAluno" id="nomeAluno" th:field="*{nomeAluno}"/>
+        <br> <br>
+        <label for="enderecoAluno">Endereço:</label>
+        <input type="text" name="enderecoAluno" id="enderecoAluno" th:field="*{enderecoAluno}"/>
+        <br> <br>
+        <label for="cidadeAluno">Cidade:</label>
+        <input type="text" name="cidadeAluno" id="cidadeAluno" th:field="*{cidadeAluno}"/>
+        <br> <br>
+        <label for="estadoAluno">Estado:</label>
+        <input type="text" name="estadoAluno" id="estadoAluno" th:field="*{estadoAluno}"/>
+        <br> <br>
+        <label for="idCurso">Curso:</label>
+        <select id="idCurso" th:field="*{curso}">
+            <option value="" disabled selected>Selecione o Curso</option>
+            <option th:each="curso : ${cursos}"
+                    th:text="${curso.nomeCurso}"
+                    th:value="${curso.idCurso}"></option>
+        </select>
+        <br> <br>
+        <label for="cepAluno">CEP:</label>
+        <input type="text" name="cepAluno" id="cepAluno" th:field="*{cepAluno}"/>
+        <br> <br>
+        <label for="telefoneAluno">Telefone:</label>
+        <input type="text" name="telefoneAluno" id="telefoneAluno" th:field="*{telefoneAluno}"/>
+        <br> <br>
+        <label for="cpfAluno">CPF:</label>
+        <input type="text" name="cpfAluno" id="cpfAluno" th:field="*{cpfAluno}"/>
+        <br> <br>
+        <label>Foto:</label>
+        <input type="file" name="foto"  accept="image/*"/>
+        <br> <br>
+        <input type="submit" value="Enviar"/>
+    </form>
+</body>
+</html>

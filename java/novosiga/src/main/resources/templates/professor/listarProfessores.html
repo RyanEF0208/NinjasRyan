@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Professores</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Fomulário Professor</h1>
+    <h2 style="text-align: center;"><a href="/professores/criar">Cadastrar Professor</a></h2>
+
+    <table align="center" border="1">
+        <tr>
+            <th colspan="10">Lista de Professores</th>
+        </tr>    
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Cidade</th>
+            <th>RG</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Graduação</th>
+        </tr>
+        <tr th:each="professor : ${professores}">
+            <td th:text="${professor.nomeProfessor}"></td>
+            <td th:text="${professor.cpfProfessor}"></td>
+            <td th:text="${professor.rgProfessor}"></td>
+            <td th:text="${professor.telefoneProfessor}"></td>
+            <td th:text="${professor.enderecoProfessor}"></td>
+            <td th:text="${professor.graduacaoProfessor}"></td>
+            <td>
+                <a th:href="@{/professores/editar/{id}(id=${professor.idProfessor})}">Editar</a>
+                <a th:href="@{/professores/excluir/{id}(id=${professor.idProfessor})}">Excluir</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

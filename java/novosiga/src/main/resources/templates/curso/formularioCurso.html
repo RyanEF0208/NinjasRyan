@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Curso</title>
+</head>
+<body>
+    <h1>Formulário Curso</h1>
+
+    <form th:action="@{/cursos/salvar}" method="POST" th:object="${curso}" enctype="multipart/form-data">
+        <input type="hidden" name="idCurso" th:field="*{idCurso}"/>
+
+        <label for="nomeCurso">Nome:</label>
+        <input type="text" name="nomeCurso" id="nomeCurso" th:field="*{nomeCurso}"/>
+        <br> <br>
+        <label for="descricaoCurso">Descrição:</label>
+        <input type="text" name="descricaoCurso" id="descricaoCurso" th:field="*{descricaoCurso}"/>
+        <br> <br>
+        <label for="cargaHoraria">Carga Horária:</label>
+        <input type="text" name="cargaHoraria" id="cargaHoraria" th:field="*{cargaHoraria}"/>
+        <br> <br>
+        <input type="submit" value="Enviar"/>
+    </form>
+</body>
+</html>

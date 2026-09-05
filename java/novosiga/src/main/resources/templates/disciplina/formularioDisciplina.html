@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Disciplina</title>
+</head>
+<body>
+    <h1>Formulário Disciplina</h1>
+
+    <form th:action="@{/disciplinas/salvar}" method="POST" th:object="${disciplina}" enctype="multipart/form-data">
+        <input type="hidden" name="idDisciplina" th:field="*{idDisciplina}"/>
+
+        <label for="nomeDisciplina">Nome:</label>
+        <input type="text" name="nomeDisciplina" id="nomeDisciplina" th:field="*{nomeDisciplina}"/>
+        <br> <br>
+        <label for="siglaDisciplina">Sigla:</label>
+        <input type="text" name="siglaDisciplina" id="siglaDisciplina" th:field="*{siglaDisciplina}"/>
+        <br> <br>
+        <label for="cargaHoraria">Carga Horária:</label>
+        <input type="text" name="cargaHoraria" id="cargaHoraria" th:field="*{cargaHoraria}"/>
+        <br> <br>
+        <label for="idProfessor">Professor:</label>
+        <select id="idProfessor" th:field="*{professor}">
+            <option value="" disabled selected>Selecione o Professor</option>
+            <option th:each="professor : ${professores}"
+                    th:text="${professor.nomeProfessor}"
+                    th:value="${professor.idProfessor}"></option>
+        </select>
+        <br><br>
+        <label for="idCurso">Curso:</label>
+        <select id="idCurso" th:field="*{curso}">
+            <option value="" disabled selected>Selecione o Curso</option>
+            <option th:each="curso : ${cursos}"
+                    th:text="${curso.nomeCurso}"
+                    th:value="${curso.idCurso}"></option>
+        </select>
+        <br><br>
+        <input type="submit" value="Enviar"/>
+    </form>
+</body>
+</html>

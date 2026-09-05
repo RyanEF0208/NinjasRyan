@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Professor</title>
+</head>
+<body>
+    <h1>Formulário Professor</h1>
+
+    <form th:action="@{/professores/salvar}" method="POST" th:object="${professor}" enctype="multipart/form-data">
+        <input type="hidden" name="idProfessor" th:field="*{idProfessor}"/>
+
+        <label for="nomeProfessor">Nome:</label>
+        <input type="text" name="nomeProfessor" id="nomeProfessor" th:field="*{nomeProfessor}"/>
+        <br> <br>
+        <label for="cpfProfessor">CPF:</label>
+        <input type="text" name="cpfProfessor" id="cpfProfessor" th:field="*{cpfProfessor}"/>
+        <br> <br>
+        <label for="rgProfessor">RG:</label>
+        <input type="text" name="rgProfessor" id="rgProfessor" th:field="*{rgProfessor}"/>
+        <br> <br>
+        <label for="telefoneProfessor">Telefone:</label>
+        <input type="text" name="telefoneProfessor" id="telefoneProfessor" th:field="*{telefoneProfessor}"/>
+        <br> <br>
+        <label for="enderecoProfessor">Endereço:</label>
+        <input type="text" name="enderecoProfessor" id="enderecoProfessor" th:field="*{enderecoProfessor}"/>
+        <br> <br>
+        <label for="graduacaoProfessor">Graduação:</label>
+        <input type="text" name="graduacaoProfessor" id="graduacaoProfessor" th:field="*{graduacaoProfessor}"/>
+        <br> <br>
+        <input type="submit" value="Enviar"/>
+    </form>
+</body>
+</html>
