@@ -1,0 +1,5 @@
+br\com\fatec\ninjas\service\NinjaService.class
+br\com\fatec\ninjas\NinjasApplication.class
+br\com\fatec\ninjas\controller\NinjaController.class
+br\com\fatec\ninjas\repository\NinjaRepository.class
+br\com\fatec\ninjas\model\Ninja.class
