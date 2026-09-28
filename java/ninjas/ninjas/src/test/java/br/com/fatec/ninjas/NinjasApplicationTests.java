@@ -1,4 +1,4 @@
-package com.naruto.ninjas;
+package br.com.fatec.ninjas;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

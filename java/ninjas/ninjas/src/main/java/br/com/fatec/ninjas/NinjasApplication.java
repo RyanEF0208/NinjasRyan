@@ -1,4 +1,4 @@
-package com.naruto.ninjas;
+package br.com.fatec.ninjas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
